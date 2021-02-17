@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %} About {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="section section-md">
+    <!-- Hero -->
+    <section class="section-header bg-secondary text-white">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-12 col-md-7 col-lg-6 text-center text-md-left">
+                    <h1 class="display-2 mb-4">OBICHECK <br class="d-none d-md-inline">APP</h1>
+                    <p class="lead mb-4 text-muted">This application will assist you in checking if you are at risk of obesity.</p>
+                    <a href="/inference" class="btn btn-tertiary mr-3 animate-up-2">Try it out ! <span class="ml-2"><span class="fas fa-arrow-right"></span></span></a>
+                </div>
+                <div class="col-12 col-md-5 d-none d-md-block text-center"><img src="static/assets/img/brand/undraw_medicine_b1ol.svg" alt=""></div>
+            </div>
+        </div>
+        <div class="position-absolute bottom-0 left-0 w-100 d-none d-md-block mb-n2">
+            <svg class="fill-white" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 43.4" style="enable-background:new 0 0 1920 43.4;" xml:space="preserve">
+                <path d="M0,23.3c0,0,405.1-43.5,697.6,0c316.5,1.5,108.9-2.6,480.4-14.1c0,0,139-12.2,458.7,14.3 c0,0,67.8,19.2,283.3-22.7v35.1H0V23.3z"></path>
+            </svg>
+        </div>
+    </section>
+    <!-- End of Hero section -->
+
+    <!-- Section -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row align-items-center justify-content-around">
+                <div class="col-md-6 col-xl-6 my-5 mt-sm-0 d-none d-sm-block">
+                    <img class="rounded img-fluid effect-img-1" src="static/assets/img/brand/colombia.jpg" alt="Mexico">
+                    <img class="rounded img-fluid effect-img-2" src="static/assets/img/brand/mexico.jpg" alt="Colombia">
+                </div>
+                <div class="col-md-6 col-xl-5 text-center text-md-left">
+                    <h2 class="h1 mb-5 font-weight-light">Reduce, <br><span class="font-weight-bold">Risk.</span></h2>
+                    <p class="lead">The ultimate goal of this application is to reduce the risks associated with obesity. Using data set of a selected group of individuals to train and test a model that can predict the risk obisity factor. </p>
+                    <p class="lead">There is a limitation to this program as the scope only includes three location. The data is fom Mexico, Peru and Colombia where a survey was taken of indiviuals between the age of 14 and 61 of their diverse eating habits and physical condition.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of section -->
+
+    <!-- Section -->
+    <section class="section section-lg bg-soft">
+        <figure class="position-absolute top-0 left-0 w-100 d-none d-md-block mt-n3">
+            <svg class="fill-soft" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 43.4" style="enable-background:new 0 0 1920 43.4;" xml:space="preserve">
+                <path d="M0,23.3c0,0,405.1-43.5,697.6,0c316.5,1.5,108.9-2.6,480.4-14.1c0,0,139-12.2,458.7,14.3 c0,0,67.8,19.2,283.3-22.7v35.1H0V23.3z"></path>
+            </svg>
+            </figure>
+        <div class="container">
+            <div class="row mb-5 mb-lg-6">
+                <div class="col-12 col-md-9 col-lg-8 text-center mx-auto">
+                    <h2 class="h1 mb-4">Final Project</h2>
+                    <p class="lead">Implementing a CDS system.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4 mb-5 mb-lg-0">
+                    <div class="card border-light">
+                        <div class="card-body">
+                            <h3 class="h5 card-title mb-2">Okey-Ikeri, Divine</h3>
+                            <span class="card-subtitle text-gray font-weight-normal">Computer science  student</span>
+                            <p class="card-text my-3">Designed the ML models & flask application. </p>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+ 
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

@@ -1,0 +1,237 @@
+{% extends "base.html" %}
+
+{% block title %} About {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="section section-md">
+    <!-- Hero -->
+    <div class="section-header pb-6 bg-primary text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 text-center">
+                    <h1 class="display-3 mb-4">Calculate your range</h1>
+                    <p class="lead mb-5">Fill in the <span class="font-weight-bold">form</span> component, to generate your results
+                        <span class="alert-inner--icon"><span class="fas fa-info-circle"></span></span>
+                        <a class="font-weight-bold"  target="_blank">This is not a replacement for medical treatment.</a> Please adhere to your physician recommendations.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Hero -->
+
+
+
+    <div class="section section-lg pt-4">
+        <form method="POST" action="/inference" >
+            <div class="container">
+                <div class="row mb-4 mb-lg-5"> 
+                    <div class="form-group">
+                        <label class="h6" for="validationServer01">Name</label>
+                        <input type="text" class="form-control" name = "name" id="validationServer01">               
+                    </div>
+                </div>   
+                <div class="row mb-4 mb-lg-5">
+                    <div class="form-group">
+                            <label class="h6" for="inlineFormCustomSelectPref">Gender</label>
+                            <select class="custom-select my-1 mr-sm-2" name="gender" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                    </div>
+                </div>
+                <div class="row mb-4 mb-lg-5">
+                    <div class="form-group">
+                        <label class="h6" for="exampleInputDate1">Date of Birth</label>
+                        <div class="input-group mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><span class="far fa-calendar-alt"></span></span>
+                            </div>
+                            <input class="form-control datepicker" name="dob" id="exampleInputDate1" placeholder="Select date" type="text" aria-label="Date with icon left">
+                        </div>
+                    </div>                
+                </div>
+                <div class="row mb-4 mb-lg-5">
+                    <div class="form-group">
+                            <label class="h6" for="inlineFormCustomSelectPref">Has a family member suffered or suffers from overweight?
+                            </label>
+                            <select class="custom-select my-1 mr-sm-2" name="history" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                    </div>
+                </div>
+                <div class="row mb-4 mb-lg-5">
+                    <div class="form-group">
+                        <label class="h6" for="inlineFormCustomSelectPref">Do you eat high caloric food frequently</label>
+                        <select class="custom-select my-1 mr-sm-2" name="favc" id="inlineFormCustomSelectPref">
+                            <option selected>Choose...</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-4 mb-lg-5">
+                    <div class="form-group">
+                        <label class="h6" for="inlineFormCustomSelectPref">Do you usually eat vegetables in your meals?</label>
+                        <select class="custom-select my-1 mr-sm-2" name="fcvc" id="inlineFormCustomSelectPref">
+                            <option selected>Choose...</option>
+                            <option value="1.0">Never</option>
+                            <option value="2.0">Sometimes</option>
+                            <option value="3.0">Always</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-4 mb-lg-5">
+                    <div class="form-group">
+                        <label class="h6" for="inlineFormCustomSelectPref">How many main meals do you have daily?</label>
+                        <select class="custom-select my-1 mr-sm-2" name="ncp" id="inlineFormCustomSelectPref">
+                            <option selected>Choose...</option>
+                            <option value="1.0">Only 1 </option>
+                            <option value="2.0">Between 1 & 2 </option>
+                            <option value="3.0">Three</option>
+                            <option value="4.0">More than three</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-4 mb-lg-5">
+                    <div class="form-group">
+                        <label class="h6" for="inlineFormCustomSelectPref">Do you eat any food between meals?</label>
+                        <select class="custom-select my-1 mr-sm-2" name="caec" id="inlineFormCustomSelectPref">
+                            <option selected>Choose...</option>
+                            <option value="no">No</option>
+                            <option value="Sometimes">Sometimes</option>
+                            <option value="Frequently">Frequently</option>
+                            <option value="Always">Always</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-4 mb-lg-5">
+                    <div class="form-group">
+                        <label class="h6" for="inlineFormCustomSelectPref">Do you smoke?</label>
+                        <select class="custom-select my-1 mr-sm-2" name="smoke" id="inlineFormCustomSelectPref">
+                            <option selected>Choose...</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-4 mb-lg-5">
+                    <div class="form-group">
+                        <label class="h6" for="inlineFormCustomSelectPref">How much water do you drink daily?</label>
+                        <select class="custom-select my-1 mr-sm-2" name="ch2o" id="inlineFormCustomSelectPref">
+                            <option selected>Choose...</option>
+                            <option value="1.0">Less than a liter</option>
+                            <option value="2.0">Between 1 and 2 L</option>
+                            <option value="3.0">More than a 2L</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-4 mb-lg-5">
+                    <div class="h6">
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Do you monitor the calories you eat daily?</label>
+                        <select class="custom-select my-1 mr-sm-2" name="scc" id="inlineFormCustomSelectPref">
+                            <option selected>Choose...</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-4 mb-lg-5">
+                    <div class="form-group">
+                        <label class="h6" for="inlineFormCustomSelectPref">How often do you have physical activity?</label>
+                        <select class="custom-select my-1 mr-sm-2" name="faf" id="inlineFormCustomSelectPref">
+                            <option selected>Choose...</option>
+                            <option value="0.0">I do not have</option>
+                            <option value="1.0">1 or 2 days</option>
+                            <option value="2.0">2 or 4 days</option>
+                            <option value="3.0">4 or 5 days</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-4 mb-lg-5">
+                    <div class="form-group">
+                        <label class="h6" for="inlineFormCustomSelectPref">How much time do you use technological devices such as cell phone, videogames, television, computer and others?</label>
+                        <select class="custom-select my-1 mr-sm-2" name="tue" id="inlineFormCustomSelectPref">
+                            <option selected>Choose...</option>
+                            <option value="0.0">0-2 hours</option>
+                            <option value="1.0">3-5 hours</option>
+                            <option value="2.0">More than 5 hours</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-4 mb-lg-5">
+                    <div class="form-group">
+                        <label class="h6" for="inlineFormCustomSelectPref">How often do you drink alcohol?</label>
+                        <select class="custom-select my-1 mr-sm-2" name="calc" id="inlineFormCustomSelectPref">
+                            <option selected>Choose...</option>
+                            <option value="no">I do not drink</option>
+                            <option value="Sometimes">Sometimes</option>
+                            <option value="Frequently">Frequently</option>
+                            <option value="Always">Always</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-4 mb-lg-5">
+                    <div class="form-group">
+                        <label class="h6" for="inlineFormCustomSelectPref">Which transportation do you usually use?</label>
+                        <select class="custom-select my-1 mr-sm-2" name="mtrans" id="inlineFormCustomSelectPref">
+                            <option selected>Choose...</option>
+                            <option value="Automobile">Automobile</option>
+                            <option value="Motorbike">Motorbike</option>
+                            <option value="Bike">Bike</option>
+                            <option value="Public_Transportation">Public Transportation</option>
+                            <option value="Walking">Walking</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-4 mb-lg-5">
+                    <button class="btn btn-tertiary" value="Submit" type="submit">Submit</button>
+                    <!-- <p><input type = "submit" value = "Submit" /></p> -->
+                </div>
+                <div class="container">
+                <div>
+                    <div class="card border-light p-4">
+                        <!-- Header -->
+                        <div class="card-hseader bg-white pb-0">
+                            <span class="d-block">
+                                <span class="h3 text-primary font-weight-bold align-top">
+                                Results
+                                </span>
+                            </span>
+                        </div>
+                        <!-- End Header -->
+                            <!-- Content -->
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush price-list mb-5">
+                                    <li class="list-group-item bg-white pl-0"><span class="icon-success"><span class="fas fa-check-circle"></span></span> {{ obese }}</li>
+                                </ul>
+                                <div class="row mb-4 mb-lg-5"></div>
+                                    <a href="/inference" target="_blank" class="btn btn-block btn-tertiary mr-4 animate-up-2">
+                                        Reset <span class="fas fa-external-link-alt ml-2"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- End Content -->
+                        </div>
+                    </div>
+                </div>
+                    
+                
+            </div>
+        </form>
+    </div>
+</div>
+    
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+{% endblock javascripts %}
